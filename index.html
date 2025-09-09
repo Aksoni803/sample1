@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        .slider {
+            overflow: hidden;
+            position: relative;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            min-width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+       
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white fixed top-0 w-full z-10 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold">My School</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="hover:text-blue-200 transition">About</a></li>
+                <li><a href="#contact" class="hover:text-blue-200 transition">Contact</a></li>
+                <li><a href="#courses" class="hover:text-blue-200 transition">Courses</a></li>
+                <li><a href="#teachers" class="hover:text-blue-200 transition">Teachers</a></li>
+                <li><a href="#facilities" class="hover:text-blue-200 transition">Facilities</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header with Image Slider -->
+    <header class="pt-16">
+        <div class="slider">
+            <div class="slides" id="slides">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5e20e324-8c6e-4d25-bc3a-01dfe8944ebb.png" alt="Modern school building with extensive glass walls reflecting sunlight, fronted by vibrant green gardens and students walking to classes in a sunny morning atmosphere" class="slide">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da6224d1-2de5-4517-b8f7-d8274378c455.png" alt="Spacious bright classroom filled with attentive students seated at wooden desks, teacher writing on a large whiteboard, colorful educational posters on walls, natural light streaming through large windows" class="slide">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/982fab99-be45-437e-8641-dc6ce8562475.png" alt="Vibrant outdoor playground with children laughing and playing on colorful swings, slides, and jungle gyms under a blue sky with green grass and picnic benches nearby" class="slide">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e052a700-a87a-4aa6-aa6a-4698e59b2df2.png" alt="Peaceful library interior with tall wooden bookshelves stocked with colorful books, students sitting at desks reading and taking notes, soft warm lighting from ceiling lamps" class="slide">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9e295ef-aeaa-4040-88e5-759583cf32b4.png" alt="Modern science laboratory with diverse group of students wearing lab coats, experimenting with beakers and microscopes on lab benches, surrounded by equipment and posters detailing scientific facts" class="slide">
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Our School</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/59ec7591-3b0b-4878-92e5-44d6742ab467.png" alt="Friendly principal in professional attire greeting a group of smiling students in a wide school corridor with lockers and motivational posters on the walls, warm lighting creating a welcoming ambiance" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <p class="text-lg leading-relaxed">Welcome to My School, a nurturing environment where students thrive academically, socially, and personally. Founded in 1980, our institution is dedicated to fostering creativity, critical thinking, and community spirit. We offer a comprehensive curriculum with state-of-the-art facilities, experienced teachers, and extracurricular activities designed to prepare students for a bright future. Our mission is to inspire every child to reach their potential and become responsible global citizens.</p>
+                    <p class="text-lg leading-relaxed mt-4">Join us in shaping young minds through innovative education and lifelong learning experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Photo Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8b2127f1-f90b-4686-8175-7b91e5dd511e.png" alt="Group of enthusiastic students in art class painting on easels with colorful canvases, brushes and palettes scattered on tables, instructor guiding with encouraging smiles in a bright, window-lit room" class="rounded-lg shadow-lg">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6fd785c1-4615-499e-ad4e-2e403e11c296.png" alt="Energetic sports team in uniforms cheering and hugging after a game victory on a grassy field, trophies raised high, coaches clapping, clear blue sky overhead" class="rounded-lg shadow-lg">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cdb45eeb-9428-4598-9141-ed5b0047fd99.png" alt="School music band performing on stage in a filled auditorium, students playing instruments like drums, guitars, and keyboards, spotlights shining, audience applauding" class="rounded-lg shadow-lg">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e53f15bc-36be-4f10-a71e-e2dfa60a7321.png" alt="Exciting science fair with students presenting innovative projects like model volcanoes and robots on tables, judges noting details, colorful posters and lights enhancing the energetic atmosphere" class="rounded-lg shadow-lg">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e736563d-9d2f-4f2c-b08d-3043bf0a9508.png" alt="Busy cafeteria during lunchtime with students chatting and eating nutritious meals at round tables, smiling cafeteria staff serving, large windows providing natural light and view of gardens" class="rounded-lg shadow-lg">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e5671568-1d0c-43eb-8f8e-c90766c30eae.png" alt="Adventurous field trip group at history museum exploring exhibits with dinosaurs and artifacts, curious students listening to guide, educational banners and interactive displays" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Course Descriptions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Mathematics</h3>
+                    <p class="leading-relaxed">Our mathematics program builds foundational skills through interactive lessons in algebra, geometry, calculus, and statistics. Students engage with real-world applications, fostering logical reasoning and problem-solving abilities.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Science</h3>
+                    <p class="leading-relaxed">Explore physics, chemistry, and biology through hands-on experiments and labs. This course encourages curiosity, critical thinking, and an understanding of scientific principles that shape our world.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">English Literature</h3>
+                    <p class="leading-relaxed">Delve into classic and contemporary works, developing reading, writing, and analytical skills. Students analyze texts, enhance vocabulary, and express ideas through essays and discussions.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">History and Social Studies</h3>
+                    <p class="leading-relaxed">Learn about historical events, cultures, and societies. This course promotes empathy, cultural awareness, and a deeper understanding of global interconnections.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Physical Education</h3>
+                    <p class="leading-relaxed">Promote health and fitness through sports, team activities, and wellness education. Students develop physical skills, teamwork, and a lifelong appreciation for active lifestyles.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Computer Science</h3>
+                    <p class="leading-relaxed">Introduce programming, coding, and digital literacy. Students create apps, websites, and solve problems using technology, preparing them for future careers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 My School. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#about" class="hover:text-blue-200">About</a>
+                <a href="#contact" class="hover:text-blue-200">Contact</a>
+                <a href="#courses" class="hover:text-blue-200">Courses</a>
+                <a href="#teachers" class="hover:text-blue-200">Teachers</a>
+                <a href="#facilities" class="hover:text-blue-200">Facilities</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Image Slider -->
+    <script>
+        const slides = document.getElementById('slides');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const totalSlides = 5;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
+</content>
+</create_file>
